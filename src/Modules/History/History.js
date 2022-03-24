@@ -51,6 +51,7 @@ function HistoryCard() {
          "Tokens":"5",
          "TokensImg":"/images/XDC.svg",
          "TokensTo":"",
+          "Hash": x,
          "TokensToImg":"",
          "Time":"2 min ago"
       }
@@ -78,7 +79,7 @@ function HistoryCard() {
                   {/* <TableCell align="left">#</TableCell> */}
                   <TableCell>Action</TableCell>
                   <TableCell>Tokens</TableCell>
-                  <TableCell>Value</TableCell>
+                  <TableCell>Hash</TableCell>
                   <TableCell>Time</TableCell>
                 
                 </TableRow>
@@ -91,7 +92,7 @@ function HistoryCard() {
                     </TableCell> */}
                     <TableCell><img src={row.ActionImg} />&nbsp;&nbsp;{row.Action}</TableCell>
                     <TableCell><img src={row.TokensImg} />&nbsp;&nbsp;{row.Tokens}&nbsp;&nbsp;&nbsp;&nbsp;<img src={row.TokensToImg} />&nbsp;&nbsp;{row.TokensTo}</TableCell>
-                    <TableCell>{row.Value}</TableCell>
+                    <TableCell>{row.Hash}</TableCell>
                     <TableCell>{row.Time}</TableCell>
                     {/* <TableCell>{row.apr}</TableCell> */}
                   </TableRow>
@@ -108,7 +109,7 @@ function HistoryCard() {
                   {/* <TableCell align="left">#</TableCell> */}
                   <TableCell>Action</TableCell>
                   <TableCell>Tokens</TableCell>
-                  <TableCell>Value</TableCell>
+                  <TableCell>Hash</TableCell>
                   <TableCell>Time</TableCell>
                 
                 </TableRow>
@@ -121,7 +122,7 @@ function HistoryCard() {
                     </TableCell> */}
                     <TableCell><img src={row.ActionImg} />&nbsp;&nbsp;{row.Action}</TableCell>
                     <TableCell><img src={row.TokensImg} />&nbsp;&nbsp;{row.Tokens}&nbsp;&nbsp;&nbsp;&nbsp;<img src={row.TokensToImg} />&nbsp;&nbsp;{row.TokensTo}</TableCell>
-                    <TableCell>{row.Value}</TableCell>
+                    <TableCell>{row.Hash}</TableCell>
                     <TableCell>{row.Time}</TableCell>
                     {/* <TableCell>{row.apr}</TableCell> */}
                   </TableRow>
