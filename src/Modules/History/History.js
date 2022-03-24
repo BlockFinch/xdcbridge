@@ -1,6 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
 import Tabs from "react-bootstrap/Tabs";
+import { useState, useEffect } from 'react';
 
 import { Tab } from "react-bootstrap";
 import Faq from "react-faq-component";
