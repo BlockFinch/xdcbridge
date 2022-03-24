@@ -14,12 +14,14 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import SearchIcon from "@mui/icons-material/Search";
 
+import xdc3 from "../../utils/xdc3";
+
 import "./Pool.css";
 import { NoBackpackSharp } from "@mui/icons-material";
 
 
 
-  
+  let results;
   const rows = [
     {
         "ActionImg":"/images/Add.svg",
@@ -59,7 +61,16 @@ const useStyles = makeStyles({
     },
   });
 function HistoryCard() {
-    const classes = useStyles();
+  const classes = useStyles();
+  const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify()
+      };
+  await fetch('https://bridgetest.blockfinch.com/txns/', requestOptions)
+        .then(response => response.json())
+        .then(data => { results = data });
+  console.log(results)
   return (
     <Box className="pool-box">
       <div className="investment-div">
