@@ -22,38 +22,7 @@ import { NoBackpackSharp } from "@mui/icons-material";
 
 
   let results;
-  const rows = [
-    {
-        "ActionImg":"/images/Add.svg",
-       "Action":"Add XDC and Ropsten",
-       "Tokens":"521,120",
-       "TokensImg":"/images/XDC.svg",
-       "TokensTo":"42,120",
-       "TokensToImg":"/images/Tether.png",
-       "Value":"$85,207.26",
-       "Time":"5 min ago"
-    },
-    {
-        "ActionImg":"/images/swapSmall.png",
-        "Action":"Add XDC and USDC",
-        "Tokens":"521,120",
-        "TokensImg":"/images/XDC.svg",
-        "TokensTo":"42,120",
-        "TokensToImg":"/images/Tether.png",
-        "Value":"$85,207.26",
-        "Time":"5 min ago"
-    },
-    {
-        "ActionImg":"/images/swapSmall.png",
-        "Action":"Add XDC and USDC",
-        "Tokens":"521,120",
-        "TokensImg":"/images/XDC.svg",
-        "TokensTo":"42,120",
-        "TokensToImg":"/images/Tether.png",
-        "Value":"$85,207.26",
-        "Time":"5 min ago"
-    }
- ]
+  const rows = []
 
 const useStyles = makeStyles({
     table: {
@@ -62,15 +31,30 @@ const useStyles = makeStyles({
   });
 function HistoryCard() {
   const classes = useStyles();
-  const requestOptions = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify()
-      };
-  await fetch('https://bridgetest.blockfinch.com/txns/', requestOptions)
-        .then(response => response.json())
-        .then(data => { results = data });
-  console.log(results)
+  const [data, setData] = useState(null)
+    const fetchURL = "https://bridgetest.blockfinch.com"
+    const getData = () =>
+      fetch(`${fetchURL}/txns`)
+        .then((res) => res.json())
+
+    useEffect(() => {
+      getData().then((data) => setData(data))
+    }, [])
+    console.log(data);
+    for (const x in data){
+      console.log(x)
+      rows.push(
+        {
+          "ActionImg":"/images/Add.svg",
+         "Action":"Sent to Ropsten",
+         "Tokens":"5",
+         "TokensImg":"/images/XDC.svg",
+         "TokensTo":"",
+         "TokensToImg":"",
+         "Time":"2 min ago"
+      }
+      )
+    };
   return (
     <Box className="pool-box">
       <div className="investment-div">
