@@ -41,7 +41,7 @@ export default function SideBar() {
 
           <ListItem className="list-item" button component={Link} to="/bridge">
             <ListItemIcon>
-            <img src=""></img>
+            <img src="/images/earn2.svg"></img>
             </ListItemIcon>
             <ListItemText className="list-text">Bridge</ListItemText>
           </ListItem>
